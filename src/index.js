@@ -8,6 +8,8 @@ const expressConfig = require('./config/expressConfig');
 const handlebarsConfig = require('./config/handlebarsConfig')
 //router
 const homeController = require('./controllers/homeController')
+//addCat
+const catController = require('./controllers/catController')
 
 const app = express();
 
@@ -18,7 +20,7 @@ expressConfig(app)
 handlebarsConfig(app)
 //router
 app.use(homeController)
-
+app.use('/cats', catController)
 
 
 
