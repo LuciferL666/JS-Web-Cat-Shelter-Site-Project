@@ -2,13 +2,15 @@ const express = require('express')
 const handlebars = require('express-handlebars');
 const path = require('path')
 
+//EXPRESS CONFIG
+const expressConfig = require('./config/expressConfig');
+
 const app = express();
 
 const PORT = 5000
 //EXPRESS CONFIG
-app.use(express.static(path.resolve(__dirname, 'public')))
-//app.use(express.static(path.resolve(__dirname, '../public')))
-//app.use(express.static(path.resolve(__dirname, '../public'))); // to be able to use static files from public Need to setup Path module
+expressConfig(app)
+
 
 
 
